@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import { Button, Row, Col, } from "react-bootstrap";
 
+
+
 export default class SababaForm extends Component {
   constructor(props) {
     super(props); 
@@ -16,6 +18,14 @@ export default class SababaForm extends Component {
     this.handleChange = this.handleChange.bind(this); //when functions are passed, we have to bind 'this'
   }
 
+show_value2(x)
+{
+ document.getElementById("slider_value2").innerHTML=x;
+}
+  
+
+
+
   handleChange(event) { //when event happens, we look at event value and set the state
     const inputValue = event.target.value;
     const stateField = event.target.name;
@@ -24,6 +34,7 @@ export default class SababaForm extends Component {
     });
     console.log(this.state);
   }
+
   async handleSubmit(event) {
     event.preventDefault();
     const { email, password } = this.state;
@@ -33,8 +44,10 @@ export default class SababaForm extends Component {
     );
   }
 
+
   render() {
     return (
+     
       <div>
          <h3>Log In</h3>
       <Form >
@@ -102,7 +115,7 @@ export default class SababaForm extends Component {
   </Form.Row>
 
     <Form.Row>
-    <Form.Group as={Col} controlId="formGridState">
+    <Form.Group as={Col} controlId="formGridState1">
       <Form.Label>College</Form.Label>
       <Form.Control as="select" defaultValue="Choose...">
         <option>Choose...</option>
@@ -110,7 +123,7 @@ export default class SababaForm extends Component {
       </Form.Control>
     </Form.Group>
 
-    <Form.Group as={Col} controlId="formGridState">
+    <Form.Group as={Col} controlId="formGridState2">
       <Form.Label>College Type</Form.Label>
       <Form.Control as="select" defaultValue="Choose...">
         <option>Choose...</option>
@@ -154,9 +167,9 @@ export default class SababaForm extends Component {
       <label for="year">Year:</label>
      
 <span id="slider_value2"></span><br></br>
-<input type="button" value="-" onClick="subtract_one()"/>
-1 <input type="range" min="1" max="6" step="1" name="sld6" onchange="show_value2(this.value)"/> 6
-<input type="button" value="+" onClick="add_one()"/>
+
+1 <input type="range" min="1" max="6" step="1" name="sld6" onChange= "show_value2(this.value)" /> 6
+
 </div>
 
 
@@ -183,9 +196,9 @@ export default class SababaForm extends Component {
       
 {['radio'].map((type) => (
   <div key={`-${type}`} className="mb-3">
-    <Form.Check  label="Beginner" type={type} id={`-${type}-Beginner`} />
-    <Form.Check  label="Intermediate" type={type} id={`-${type}-Intermidiate`} />
-    <Form.Check  label="Pro" type={type} id={`-${type}-Pro`} />
+    <Form.Check  label="Beginner" type={type} id={`-${type}-Beginner1`} />
+    <Form.Check  label="Intermediate" type={type} id={`-${type}-Intermidiate1`} />
+    <Form.Check  label="Pro" type={type} id={`-${type}-Pro1`} />
   
   </div>
 ))}
@@ -201,9 +214,9 @@ export default class SababaForm extends Component {
 
     {['radio'].map((type) => (
   <div key={`-${type}`} className="mb-3">
-    <Form.Check  label="Beginner" type={type} id={`-${type}-Beginner`} />
-    <Form.Check  label="Intermediate" type={type} id={`-${type}-Intermidiate`} />
-    <Form.Check  label="Pro" type={type} id={`-${type}-Pro`} />
+    <Form.Check  label="Beginner" type={type} id={`-${type}-Beginner2`} />
+    <Form.Check  label="Intermediate" type={type} id={`-${type}-Intermidiate2`} />
+    <Form.Check  label="Pro" type={type} id={`-${type}-Pro2`} />
   
   </div>
 ))}
@@ -219,9 +232,9 @@ export default class SababaForm extends Component {
 
       {['radio'].map((type) => (
   <div key={`-${type}`} className="mb-3">
-    <Form.Check  label="Beginner" type={type} id={`-${type}-Beginner`} />
-    <Form.Check  label="Intermediate" type={type} id={`-${type}-Intermidiate`} />
-    <Form.Check  label="Pro" type={type} id={`-${type}-Pro`} />
+    <Form.Check  label="Beginner" type={type} id={`-${type}-Beginner3`} />
+    <Form.Check  label="Intermediate" type={type} id={`-${type}-Intermidiate3`} />
+    <Form.Check  label="Pro" type={type} id={`-${type}-Pro3`} />
   
   </div>
 ))}
@@ -231,15 +244,15 @@ export default class SababaForm extends Component {
         type="checkbox"
         label="Business"
         name="formHorizontalRadios"
-        id="formHorizontalRadios3"
+        id="formHorizontalRadios4"
       />
     </Col>
 
     {['radio'].map((type) => (
   <div key={`-${type}`} className="mb-3">
-    <Form.Check  label="Beginner" type={type} id={`-${type}-Beginner`} />
-    <Form.Check  label="Intermediate" type={type} id={`-${type}-Intermidiate`} />
-    <Form.Check  label="Pro" type={type} id={`-${type}-Pro`} />
+    <Form.Check  label="Beginner" type={type} id={`-${type}-Beginner4`} />
+    <Form.Check  label="Intermediate" type={type} id={`-${type}-Intermidiate4`} />
+    <Form.Check  label="Pro" type={type} id={`-${type}-Pro4`} />
   
   </div>
 ))}
@@ -253,12 +266,12 @@ export default class SababaForm extends Component {
 <br></br>
     
   <h6>I've got proof:</h6>
-    <Form.Group as={Col} controlId="formGridEmail">
+    <Form.Group as={Col} controlId="formGridLinkedin">
       <Form.Label>Linkedin</Form.Label>
       <Form.Control type="text" placeholder="www.linkedin.com/in/JohnSmith/" />
     </Form.Group>
 
-    <Form.Group as={Col} controlId="formGridPassword">
+    <Form.Group as={Col} controlId="formGridGithub">
       <Form.Label>GitHub</Form.Label>
       <Form.Control type="text" placeholder="github.com/JohnSmith" />
     </Form.Group>
@@ -273,14 +286,14 @@ export default class SababaForm extends Component {
    
       <img src="https://static.thenounproject.com/png/962492-200.png" width="auto" height="50px" alt=""/>
 
-      <input type="checkbox" id="developer" name="search"></input>
+      <input type="checkbox" id="developer2" name="search"></input>
       <label for="developer">Developer</label>
 </div>
 <div class="form-group col-md-4">
      
       <img src="https://cdn2.iconfinder.com/data/icons/computer-63/100/People-Desk-02-512.png" width="auto" height="50px" alt=""/>
     
-      <input type="checkbox" id="designer" name="search"></input>
+      <input type="checkbox" id="designer2" name="search"></input>
       <label for="designer">Designer</label> 
      
 </div>
@@ -288,7 +301,7 @@ export default class SababaForm extends Component {
       
        <img src="https://static.thenounproject.com/png/693589-200.png" width="auto" height="50px" alt=""/>
       
-      <input type="checkbox" id="marketer" name="search"></input>
+      <input type="checkbox" id="marketer2" name="search"></input>
       <label for="marketer">Marketer</label>
       
 </div>
